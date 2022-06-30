@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import dotha from './dotha.jpg';
 import './App.css';
 
 import Player from 'react-material-music-player'
@@ -81,7 +79,7 @@ function App() {
           textAlign: "center",
         }}
       >
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <Box sx={{ typography: "h6" }}>react-material-music-player</Box>
 
         <div>
@@ -229,16 +227,16 @@ function App() {
 
 // get media data over tthe internet
 const TEST_MEDIA =
-  "https://raw.githubusercontent.com/the-maazu/react-material-music-player/master/sample_media/";
+  "https://raw.githubusercontent.com/MichaelSunday/sstereoo/master/src/";
 
 // update playlist with test data and start play
 PlayerInterface.play([
   new Track(
     "1",
-    "https://images.genius.com/cfa8999934e567fbed6ddfbd8164062d.1000x1000x1.jpg",
+    TEST_MEDIA + "dotha.jpg",
     "Go",
     "Dotha",
-    "go.mp3"
+    TEST_MEDIA + "go.mp3"
   ),
 ]);
 
