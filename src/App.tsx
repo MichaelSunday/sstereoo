@@ -1,19 +1,28 @@
 import React from 'react';
 import './App.css';
 
+import logo from "./bodega.gif";
+
 import Player from 'react-material-music-player'
 import { Track, PlayerInterface } from 'react-material-music-player'
 
 import makeTheme from "./makeTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
+
 import {
   Box,
+  useMediaQuery,
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
   ToggleButtonGroup,
   ToggleButton,
-  useMediaQuery,
   TextField,
   Link,
 } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 function App() {
@@ -75,11 +84,12 @@ function App() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          color: "text.primary",
+          color: "white",
           textAlign: "center",
         }}
       >
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <text>asdasd</text>
+        <img src={logo} className="App-logo" />
         {/* <Box sx={{ typography: "h6" }}>react-material-music-player</Box>
 
         <div>

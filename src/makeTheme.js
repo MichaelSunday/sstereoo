@@ -24,10 +24,10 @@ export default function getTheme(mode) {
 
   // define light palette for dark mode
   let darkPalette = {
-    primary: { main: "#5090D3" },
-    secondary: { main: "#ce93d8" },
+    primary: { main: "#c40e0e" },
+    secondary: { main: "#c40e0e" },
     background: {
-      paper: "#0A1929",
+      paper: "#FCFCFF",
     },
     action: {
       active: "#fff",

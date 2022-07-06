@@ -2,16 +2,30 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MuiPaper-root {
+  background-color: #FE6631 !important;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.15)) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+.css-fk9ojq {
+  height: 96vh !important;
+}
+
+@media only screen and (max-width: 600px) { 
+  .App-logo {
+    height: 150vmin !important;
+  }
+}
+
+.App-logo {
+  height: 94vmin;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
