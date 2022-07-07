@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 
 import logo from "./bodega.gif";
+import radio from "./radio.png";
+import store from "./store.png";
+import update from "./update.png";
 
 import Player from 'react-material-music-player'
 import { Track, PlayerInterface } from 'react-material-music-player'
@@ -15,8 +18,10 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   IconButton,
+  Button,
+  Menu,
+  MenuItem,
   ToggleButtonGroup,
   ToggleButton,
   TextField,
@@ -56,25 +61,64 @@ function App() {
     borderRadiusBR: 0,
   });
 
-  // const handleForm = (e) => {
-  //   const id = e.target.id;
-  //   const value = e.target.value;
-
-  //   setSx({
-  //     width,
-  //     position,
-  //     bottom,
-  //     boxShadow,
-  //     borderRadiusTL,
-  //     borderRadiusTR,
-  //     borderRadiusBL,
-  //     borderRadiusBR,
-  //     [`${id}`]: value,
-  //   });
-  // };
+  // dropdown button functionality
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
+    
     <ThemeProvider theme={theme}>
+      {/* <meta name="viewport" content="width=device-width"></meta> */}
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              
+            </Typography>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              id="basic-button"
+              aria-controls={open ? 'basic-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+              sx={{ ml: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MenuItem onClick={handleClose}>COLLECTION</MenuItem>
+              <MenuItem onClick={handleClose}>RADIO</MenuItem>
+              <MenuItem onClick={handleClose}>MAIN</MenuItem>
+            </Menu>
+          </Toolbar>
+        </AppBar>
+      </Box>
       <Box
         sx={{
           width: "100vw",
@@ -88,147 +132,14 @@ function App() {
           textAlign: "center",
         }}
       >
-        <text>asdasd</text>
+         
         <img src={logo} className="App-logo" />
-        {/* <Box sx={{ typography: "h6" }}>react-material-music-player</Box>
-
-        <div>
-          <Link
-            href="https://www.npmjs.com/package/react-material-music-player"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            npm
-          </Link>
-          <br />
-          <Link
-            href="https://github.com/the-maazu/react-material-music-player"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github
-          </Link>
-        </div>
-
-        <Box sx={{ typography: "body3", margin: 2 }}>
-          Resize window to eneter mobile mode. <br />
-          Swipe up or tap player to expand in mobile mode
-        </Box>
-
-        <ToggleButtonGroup
-          value={mode}
-          exclusive={true}
-          onChange={(e, value) => {
-            if (value) setMode(value);
-          }}
-        >
-          <ToggleButton value={"light"}>
-            <LightModeRounded />
-          </ToggleButton>
-          <ToggleButton value={"system"}>
-            <ComputerRounded />
-          </ToggleButton>
-          <ToggleButton value={"dark"}>
-            <DarkModeRounded />
-          </ToggleButton>
-        </ToggleButtonGroup> */}
-
-        {/* <Box sx={{ display: "flex", margin: 2 }}>
-          <Box sx={{ margin: 1 }}>
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="width"
-              label="width"
-              value={width}
-              onChange={handleForm}
-            />
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="position"
-              label="position"
-              value={position}
-              onChange={handleForm}
-              type="text"
-            />
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="bottom"
-              label="bottom"
-              value={bottom}
-              onChange={handleForm}
-              type="text"
-            />
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="boxShadow"
-              label="boxShadow"
-              value={boxShadow}
-              onChange={handleForm}
-              type="number"
-            />
-          </Box>
-
-          <Box sx={{ margin: 1 }}>
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="borderRadiusTL"
-              label="borderRadiusTL"
-              value={borderRadiusTL}
-              onChange={handleForm}
-              type="number"
-            />
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="borderRadiusTR"
-              label="borderRadiusTR"
-              value={borderRadiusTR}
-              onChange={handleForm}
-              type="number"
-            />
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="borderRadiusBL"
-              label="borderRadiusBL"
-              value={borderRadiusBL}
-              onChange={handleForm}
-              type="number"
-            />
-            <TextField
-              sx={{ display: "block" }}
-              margin={"dense"}
-              size="small"
-              id="borderRadiusBR"
-              label="borderRadiusBR"
-              value={borderRadiusBR}
-              onChange={handleForm}
-              type="number"
-            />
-          </Box>
-        </Box> */}
+        <img src={radio} className="radio" />
+        <img src={update} className="update" />
+        <img src={store} className="store" />
 
         <Player
-          // disableDrawer
-          // sx={{
-          //   width: width,
-          //   position: position,
-          //   bottom: bottom,
-          //   boxShadow: boxShadow,
-          //   borderRadius: `${borderRadiusTL}px ${borderRadiusTR}px ${borderRadiusBL}px ${borderRadiusBR}px`,
-          // }}
+
         />
       </Box>
     </ThemeProvider>

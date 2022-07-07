@@ -5,20 +5,132 @@
 .MuiPaper-root {
   background-color: #FE6631 !important;
   background-image: linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.15)) !important;
+  backdrop-filter: none !important;
 }
 
 .css-fk9ojq {
-  height: 96vh !important;
+  height: 84vh !important;
 }
-
-@media only screen and (max-width: 600px) { 
+/* OTHER PHONES */
+@media only screen 
+and (max-width: 600px) {
+  .App-logo {
+    height: 180vmin !important;
+  }
+  .radio {
+    width: 71px !important;
+    top: 26% !important;
+    left: 30% !important;
+  }
+  .store {
+    width: 65px !important;
+    top: 76% !important;
+    left: 52% !important;
+  }
+}
+/* SE */
+@media only screen 
+and (device-height: 667px) 
+and (device-width: 375px) { 
   .App-logo {
     height: 150vmin !important;
+  }
+  .css-fk9ojq {
+    height: 80vh !important;
+  }
+  .radio {
+    width: 71px !important;
+    top: 26% !important;
+    left: 30% !important;
+  }
+  .store {
+    width: 65px !important;
+    top: 76% !important;
+    left: 52% !important;
+  }
+}
+/* 11 */
+@media only screen 
+and (device-width: 414px) 
+and (device-height: 896px)  { 
+  .App-logo {
+    height: 180vmin !important;
+  }
+  .radio {
+    width: 71px !important;
+    top: 26% !important;
+    left: 30% !important;
+  }
+  .store {
+    width: 65px !important;
+    top: 76% !important;
+    left: 52% !important;
+  }
+}
+/* 12 */
+@media only screen 
+and (device-width: 390px) 
+and (device-height: 844px) { 
+  .App-logo {
+    height: 180vmin !important;
+  }
+  .radio {
+    width: 71px !important;
+    top: 26% !important;
+    left: 30% !important;
+  }
+  .store {
+    width: 65px !important;
+    top: 76% !important;
+    left: 52% !important;
+  }
+}
+/* XR */
+@media only screen 
+and (device-width: 414px) 
+and (device-height: 896px) { 
+  .App-logo {
+    height: 180vmin !important;
+  }
+  .radio {
+    width: 71px !important;
+    top: 26% !important;
+    left: 30% !important;
+  }
+  .store {
+    width: 65px !important;
+    top: 76% !important;
+    left: 52% !important;
   }
 }
 
 .App-logo {
-  height: 94vmin;
+  height: 90vmin;
+  position: absolute;
+  z-index: 1;
+}
+
+/* PAGE ACTION BUTTONS */
+.radio {
+  z-index: 2;
+  position: absolute;
+  width: 100px;
+  top: 24%;
+  left: 45%;
+}
+
+.update {
+  width: 100px;
+  z-index: 2;
+  position: absolute;
+}
+
+.store {
+  width: 100px;
+  z-index: 2;
+  top: 76%;
+  left: 52%;
+  position: absolute;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -49,4 +161,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.css-ad4wgl-MuiPaper-root-MuiAppBar-root {
+  background-color: #FCFCFF !important;
+  box-shadow: none !important;
+  color: black !important;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "whisper";
+  src: url("./whisper.ttf") format("ttf");
+}
+
+.css-s64cea {
+  font-family: "whisperten" !important;
+  font-size: 23px !important;
 }
